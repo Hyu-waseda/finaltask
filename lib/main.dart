@@ -106,13 +106,15 @@ class _MyAppState extends State<MyApp> {
                           MaterialPageRoute(builder: (context) {
                         return ScreenA(item: item);
                       }));
-                      setState(() {
-                        items[index]["title"] = lst[0];
-                        items[index]["month"] = lst[1];
-                        items[index]["day"] = lst[2];
-                        items[index]["hour"] = lst[3];
-                        items[index]["minutes"] = lst[4];
-                      });
+                      if (lst != null) {
+                        setState(() {
+                          items[index]["title"] = lst[0];
+                          items[index]["month"] = lst[1];
+                          items[index]["day"] = lst[2];
+                          items[index]["hour"] = lst[3];
+                          items[index]["minutes"] = lst[4];
+                        });
+                      }
                     },
                   ),
                 ),
